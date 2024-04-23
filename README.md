@@ -1,0 +1,1 @@
+Script to help me setup a wireguard vpn in any remote server.
