@@ -5,7 +5,7 @@ set -eou pipefail
 REMOTE_USER="${REMOTE_USER:-root}"
 
 rsync -tv ./docker-compose.yml $REMOTE_USER@$HOST:wireguard/
-ssh root@$HOST <<-SCRIPT
+ssh $REMOTE_USER@$HOST <<-SCRIPT
   echo Starting wireguard container
   docker compose -f ./wireguard/docker-compose.yml up -d
 
