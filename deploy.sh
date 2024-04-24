@@ -5,7 +5,7 @@ set -eou pipefail
 REMOTE_USER="${REMOTE_USER:-root}"
 
 rsync -tv ./docker-compose.yml $REMOTE_USER@$HOST:wireguard/
-ssh $REMOTE_USER@$HOST <<-SCRIPT
+ssh $REMOTE_USER@$HOST <<-SCRIPT.sh
   echo Starting wireguard container
   docker compose -f ./wireguard/docker-compose.yml up -d
 
@@ -16,4 +16,4 @@ ssh $REMOTE_USER@$HOST <<-SCRIPT
   echo opening up port 51820...
   ufw allow 51820/udp
   echo All complete !
-SCRIPT
+SCRIPT.sh
