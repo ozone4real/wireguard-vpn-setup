@@ -1,4 +1,4 @@
-Script to help me setup a wireguard vpn in any remote server.
+Simple script to help me setup a wireguard vpn in any remote server.
 
 ## Usage
 Set the HOST environment variable and run the script:
